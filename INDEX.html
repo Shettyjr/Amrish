@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Forgive Me Baby Girl | Aisha 👑❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fff5f0 0%, #ffe0d6 100%);
+            color: #4a2c2c;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating Hearts Background */
+        .heart-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .heart-bg i {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255, 107, 107, 0.3);
+            animation: floatHeart 8s linear infinite;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-20vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Cover Section - FULL SCREEN */
+        .cover {
+            height: 100vh;
+            width: 100%;
+            background-image: url('images/cover.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .cover-text {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            border-radius: 30px;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .cover-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(255,107,107,0.5);
+        }
+
+        .cover-text p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            font-style: italic;
+        }
+
+        .heart-icon {
+            font-size: 3rem;
+            margin-top: 1rem;
+            animation: heartbeat 1.2s infinite;
+            display: inline-block;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.8));
+        }
+
+        /* Apology Card */
+        .message-card {
+            max-width: 800px;
+            margin: 4rem auto;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 40px;
+            padding: 2.5rem;
+            box-shadow: 0 30px 50px rgba(217, 83, 79, 0.2);
+            text-align: center;
+            border: 2px solid rgba(255, 107, 107, 0.3);
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .message-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 35px 55px rgba(217, 83, 79, 0.3);
+        }
+
+        .message-card h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d9534f;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .apology-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #5a3e3e;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .signature {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            color: #b3473f;
+            text-align: right;
+            font-style: italic;
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 3rem 1rem;
+            background: rgba(255, 243, 239, 0.9);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #b84a3a;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-sub {
+            color: #b85c4a;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            background: white;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03) rotate(1deg);
+            box-shadow: 0 20px 35px rgba(217, 83, 79, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, #ffe9e2, #ffdfd5);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .video-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #b84a3a;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 2rem auto;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            width: 100%;
+            max-width: 500px;
+            transition: all 0.4s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 40px rgba(217, 83, 79, 0.3);
+        }
+
+        .video-card video {
+            width: 100%;
+            max-height: 400px;
+            background: #000;
+        }
+
+        .video-caption {
+            padding: 1rem;
+            font-weight: 500;
+            color: #a14536;
+            background: white;
+        }
+
+        /* Promise Section */
+        .promise {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 3px solid #ffb6a3;
+            border-bottom: 3px solid #ffb6a3;
+            margin: 2rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .promise h3 {
+            font-size: 1.8rem;
+            color: #c95c4a;
+        }
+
+        .promise-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .promise-item {
+            background: linear-gradient(135deg, #fff0ea, #ffe4db);
+            padding: 1rem 2rem;
+            border-radius: 60px;
+            font-weight: 500;
+            color: #a13e2f;
+            transition: all 0.3s ease;
+            animation: gentleFloat 3s ease-in-out infinite;
+            box-shadow: 0 5px 15px rgba(217,83,79,0.1);
+            max-width: 280px;
+        }
+
+        .promise-item:hover {
+            transform: scale(1.05);
+            background: #ffded3;
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .action-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #d9534f, #c13b37);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 2rem auto;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 20px rgba(217,83,79,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(217,83,79,0.5);
+        }
+
+        .action-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .action-btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #aa6f62;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.2); }
+            35% { transform: scale(1.1); }
+            45% { transform: scale(1.2); }
+            55% { transform: scale(1); }
+        }
+
+        @media (max-width: 700px) {
+            .cover-text h1 { font-size: 2rem; }
+            .message-card { margin: 2rem 1rem; padding: 1.5rem; }
+            .promise-item { font-size: 0.9rem; padding: 0.8rem 1.2rem; }
+        }
+
+        .no-image-fallback, .no-video-fallback {
+            background: linear-gradient(135deg, #f0cfc2, #e8bcac);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 280px;
+            color: #7a4c3e;
+            font-style: italic;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .heart-burst {
+            position: fixed;
+            pointer-events: none;
+            z-index: 10000;
+            font-size: 24px;
+            animation: burstUp 1s ease-out forwards;
+        }
+
+        @keyframes burstUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(1.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heart-bg" id="heartBg"></div>
+
+    <!-- COVER - FULL SCREEN -->
+    <div class="cover" id="home">
+        <div class="cover-text">
+            <h1>My Baby Girl 👑</h1>
+            <p>Aisha • Queen Amrish</p>
+            <div class="heart-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <p style="margin-top: 20px;">"Today is your day... and I'm sorry for the tears when there should have been smiles."</p>
+        </div>
+    </div>
+
+    <!-- APOLOGY CARD - NEW WRITE UP -->
+    <div class="message-card" id="apologyCard">
+        <h2>My Beautiful Baby Girl,</h2>
+        <div class="apology-text">
+            <p>I know I messed up. On your birthday, of all days, I let my pride and my stupidity get in the way of what really matters — <strong>YOU</strong>.</p>
+            <p>You have loved me with a patience I never deserved. You have stayed when any other woman would have walked away. You call me yours even when I act like I don't deserve you. And the truth is... I don't. Not yet.</p>
+            <p>But I want to. I want to become the man who deserves <strong>Queen Amrish</strong>.</p>
+            <p><strong>Aisha, my love,</strong> the distance between us is already hard enough. Please don't let there be distance between our hearts too. I'm not perfect. I've been careless. I've taken your love for granted. And I am so, so sorry.</p>
+            <p>Today is <strong>YOUR</strong> day. Not a day for fighting. Not a day for tears. A day for cake, for laughter, for knowing that somewhere across the miles, a fool is on his knees begging for one more chance.</p>
+            <p><strong>Happy birthday, Baby Girl.</strong> I love you. I'm sorry. And I promise — I will do better.</p>
+        </div>
+        <div class="signature">
+            💌 Yours forever,<br>Your Man
+        </div>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="gallery" id="gallery">
+        <h2><i class="fas fa-image"></i> She is Art</h2>
+        <div class="gallery-sub">Every picture of you takes my breath away</div>
+        <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+
+    <!-- VIDEO SECTION -->
+    <div class="video-section" id="videos">
+        <h2><i class="fas fa-video"></i> Her Voice, Her Smile</h2>
+        <div class="gallery-sub">Watching you is my favorite thing</div>
+        <div class="video-grid" id="videoGrid"></div>
+    </div>
+
+    <!-- PROMISE SECTION - NEW -->
+    <div class="promise">
+        <h3>🤝 My Promise to You, My Baby Girl 🤝</h3>
+        <div class="promise-list">
+            <span class="promise-item">📞 I will call you first — not when it's convenient, but when YOU need to hear my voice</span>
+            <span class="promise-item">❤️ I will appreciate you out loud — every day, not just when we fight</span>
+            <span class="promise-item">🌹 I will never let you feel unwanted dear </span>
+            <span class="promise-item">✈️ I will close this distance — because you are worth every mile</span>
+        </div>
+        <button class="action-btn" id="forgiveBtn"><i class="fas fa-heart"></i> Send Her All My Love & Apology <i class="fas fa-heart"></i></button>
+    </div>
+
+    <footer>
+        For Aisha (Queen Amrish) — My Baby Girl.<br>
+        I'm learning to love you the way you deserve. Happy birthday, my queen. ❤️
+    </footer>
+
+    <script>
+        // Floating hearts background
+        function createFloatingHearts() {
+            const heartBg = document.getElementById('heartBg');
+            const numberOfHearts = 35;
+            for (let i = 0; i < numberOfHearts; i++) {
+                const heart = document.createElement('i');
+                heart.className = 'fas fa-heart';
+                const size = Math.random() * 25 + 10;
+                heart.style.fontSize = size + 'px';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDuration = Math.random() * 8 + 5 + 's';
+                heart.style.animationDelay = Math.random() * 10 + 's';
+                heart.style.opacity = Math.random() * 0.4 + 0.1;
+                heartBg.appendChild(heart);
+            }
+        }
+
+        function createHeartBurst(x, y) {
+            for (let i = 0; i < 12; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-burst';
+                heart.innerHTML = ['❤️', '💖', '💗', '💓', '💕'][Math.floor(Math.random() * 5)];
+                heart.style.left = (x || window.innerWidth / 2) + (Math.random() - 0.5) * 80 + 'px';
+                heart.style.top = (y || window.innerHeight / 2) + (Math.random() - 0.5) * 80 + 'px';
+                heart.style.fontSize = (Math.random() * 20 + 16) + 'px';
+                heart.style.animationDuration = (Math.random() * 0.8 + 0.6) + 's';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 1000);
+            }
+        }
+
+        // Gallery
+        const herPictures = ["her1.jpg", "her2.jpg", "her3.jpg", "her4.jpg", "her5.jpg"];
+        const galleryContainer = document.getElementById("galleryGrid");
+        
+        function loadGallery() {
+            if (!galleryContainer) return;
+            galleryContainer.innerHTML = "";
+            herPictures.forEach(imgName => {
+                const imgPath = `images/${imgName}`;
+                const div = document.createElement("div");
+                div.className = "gallery-item";
+                const img = document.createElement("img");
+                img.alt = "Aisha - Queen Amrish";
+                img.src = imgPath;
+                img.onerror = function() {
+                    this.onerror = null;
+                    this.parentElement.innerHTML = `<div class="no-image-fallback"><i class="fas fa-heart"></i><br>📸 Add ${imgName} to images folder</div>`;
+                };
+                div.appendChild(img);
+                galleryContainer.appendChild(div);
+            });
+        }
+
+        // Videos
+        const videoList = [{ name: "herVideo.mp4", label: "✨ My Baby Girl ✨" }];
+        const videoGrid = document.getElementById("videoGrid");
+        
+        function loadVideos() {
+            if (!videoGrid) return;
+            videoGrid.innerHTML = "";
+            videoList.forEach(video => {
+                const videoPath = `videos/${video.name}`;
+                const card = document.createElement("div");
+                card.className = "video-card";
+                const videoElem = document.createElement("video");
+                videoElem.controls = true;
+                videoElem.preload = "metadata";
+                videoElem.playsInline = true;
+                const source = document.createElement("source");
+                source.src = videoPath;
+                source.type = "video/mp4";
+                videoElem.appendChild(source);
+                videoElem.onerror = function() {
+                    this.parentElement.innerHTML = `<div class="no-video-fallback"><i class="fas fa-film"></i><br>📁 Add ${video.name} to the "videos" folder</div>`;
+                };
+                const caption = document.createElement("div");
+                caption.className = "video-caption";
+                caption.innerHTML = `<i class="fas fa-play-circle"></i> ${video.label}`;
+                card.appendChild(videoElem);
+                card.appendChild(caption);
+                videoGrid.appendChild(card);
+            });
+        }
+
+        function checkCoverImage() {
+            const coverDiv = document.querySelector('.cover');
+            const testImg = new Image();
+            testImg.src = 'images/cover.jpg';
+            testImg.onerror = function() {
+                coverDiv.style.backgroundImage = "linear-gradient(135deg, #e6b8a8, #d4947e)";
+                const textDiv = coverDiv.querySelector('.cover-text');
+                if (textDiv && !document.querySelector('.cover-note')) {
+                    const note = document.createElement('p');
+                    note.className = 'cover-note';
+                    note.style.marginTop = "15px";
+                    note.style.fontSize = "0.9rem";
+                    note.style.background = "rgba(0,0,0,0.5)";
+                    note.style.padding = "5px 15px";
+                    note.style.borderRadius = "30px";
+                    note.innerHTML = "✨ Add her photo: images/cover.jpg ✨";
+                    textDiv.appendChild(note);
+                }
+            };
+        }
+
+        // Card click heart burst
+        document.getElementById("apologyCard")?.addEventListener("click", (e) => createHeartBurst(e.clientX, e.clientY));
+        
+        // Forgive button
+        document.getElementById("forgiveBtn")?.addEventListener("click", () => {
+            for(let i = 0; i < 25; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement("div");
+                    heart.innerHTML = ["❤️", "💖", "💗", "💓", "💕", "💘"][Math.floor(Math.random() * 6)];
+                    heart.style.position = "fixed";
+                    heart.style.bottom = "20px";
+                    heart.style.left = Math.random() * window.innerWidth + "px";
+                    heart.style.fontSize = (Math.random() * 30 + 20) + "px";
+                    heart.style.opacity = "0.9";
+                    heart.style.transition = "all 1.5s ease-out";
+                    heart.style.pointerEvents = "none";
+                    heart.style.zIndex = "9999";
+                    document.body.appendChild(heart);
+                    setTimeout(() => {
+                        heart.style.transform = "translateY(-400px) rotate(15deg)";
+                        heart.style.opacity = "0";
+                    }, 50);
+                    setTimeout(() => heart.remove(), 1600);
+                }, i * 50);
+            }
+            setTimeout(() => {
+                alert("💗 I love you, Baby Girl! Happy birthday, Aisha (Queen Amrish). Please forgive me. You mean everything to me. 💗");
+            }, 200);
+        });
+
+        window.addEventListener("load", () => {
+            createFloatingHearts();
+            loadGallery();
+            loadVideos();
+            checkCoverImage();
+            setTimeout(() => createHeartBurst(window.innerWidth / 2, window.innerHeight / 2), 500);
+        });
+    </script>
+</body>
+</html>
